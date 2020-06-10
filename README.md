@@ -1,10 +1,3 @@
-<!--
- * @Description: Description
- * @Author: Daito Chai
- * @Date: 2020-06-09 19:21:02
- * @LastEditTime: 2020-06-09 21:09:49
- * @LastEditors: 
---> 
 # icdong
 
 ## Project setup
