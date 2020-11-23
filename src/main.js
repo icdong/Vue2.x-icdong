@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-23 15:50:33
- * @LastEditTime: 2020-11-23 16:03:11
+ * @LastEditTime: 2020-11-23 16:07:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Vue3.0-icdong\src\main.js
@@ -13,8 +13,7 @@ import store from "./store";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-import http from './utils/http'
-Vue.prototype.$http = http
+import './utils/http'
 
 // if (process.env.NODE_ENV !== 'porduction') require('./mock')
 
