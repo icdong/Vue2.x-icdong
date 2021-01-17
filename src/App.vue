@@ -2,58 +2,57 @@
  * @Description: Description
  * @Author: Daito Chai
  * @Date: 2020-06-09 19:20:09
- * @LastEditTime: 2020-06-09 21:10:31
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-10 19:54:59
+ * @LastEditors: Daito Chai
 -->
 <template>
-  <div id="icdong">
-    <router-view></router-view>
-  </div>
+	<div id="icdong">
+		<router-view></router-view>
+	</div>
 </template>
 
 <script>
-  export default {
-    name: 'Icdong',
-    component: {
+	export default {
+		name: 'Icdong',
+		component: {
 
-    },
-    data () {
-      return {
+		},
+		data() {
+			return {
 
-      }
-    },
-    // html加载完成之前执行；执行顺序：父组件-子组件
-    created() {
+			}
+		},
+		// html加载完成之前执行；执行顺序：父组件-子组件
+		created() {
 
-    },
-    // html加载完成后执行；执行顺序：子组件-父组件
-    mounted() {
+		},
+		// html加载完成后执行；执行顺序：子组件-父组件
+		mounted() {
 
-    },
-    // 事件方法执行
-    methods: {
+		},
+		// 事件方法执行
+		methods: {
 
-    },
-    // watch是去监听一个值的变化，然后执行相对应的函数。
-    watch: {
+		},
+		// watch是去监听一个值的变化，然后执行相对应的函数。
+		watch: {
 
-    },
-    // computed是计算属性，
-    // 也就是依赖其它的属性计算所得出最后的值
-    computed: {
+		},
+		// computed是计算属性，
+		// 也就是依赖其它的属性计算所得出最后的值
+		computed: {
 
-    }
-  }
+		}
+	}
 </script>
 
 <style lang="less" scoped>
-  #icdong {
-    width: 100%;
-    height: 100%;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+	#icdong {
+		width: 100%;
+		height: 100%;
+		font-family: "Avenir", Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		color: #2c3e50;
+	}
 </style>
