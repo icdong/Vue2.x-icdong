@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: Daito Chai
  * @Date: 2021-01-10 19:45:49
- * @LastEditors: Daito Chai
- * @LastEditTime: 2021-01-17 14:53:52
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-19 13:51:39
  */
 
 let global = require('./ip-server-config')
@@ -53,24 +53,22 @@ module.exports = {
      *  有了map就可以像未加密的代码一样，准确的输出是哪一行哪一列有错。
      * */
     productionSourceMap: false,
-    plugins: [
-        new CompressionPlugin({
-            algorithm: 'gzip', // 使用gzip压缩
-            test: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i, // 匹配文件名
-            filename: '[path].gz[query]', // 压缩后的文件名(保持原文件名，后缀加.gz)
-            minRatio: 1, // 压缩率小于1才会压缩
-            threshold: 10240, // 对超过10k的数据压缩
-            deleteOriginalAssets: false, // 是否删除未压缩的源文件，谨慎设置，如果希望提供非gzip的资源，可不设置或者设置为false（比如删除打包后的gz后还可以加载到原始资源文件）
-        }),
-    ],
+    configureWebpack: {
+        plugins: [
+            new CompressionPlugin({
+                algorithm: 'gzip', // 使用gzip压缩
+                test: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i, // 匹配文件名
+                filename: '[path].gz[query]', // 压缩后的文件名(保持原文件名，后缀加.gz)
+                minRatio: 1, // 压缩率小于1才会压缩
+                threshold: 10240, // 对超过10k的数据压缩
+                deleteOriginalAssets: false, // 是否删除未压缩的源文件，谨慎设置，如果希望提供非gzip的资源，可不设置或者设置为false（比如删除打包后的gz后还可以加载到原始资源文件）
+            }),
+        ]
+    },
     chainWebpack: (config) => {
-        if (isPorduction) {
-            if (process.env.npm_config_report) {
-                config.plugin('webpack-bundle-analyzer')
-                    .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-                    .end();
-                config.plugins.delete('prefetch')
-            }
+        if (process.env.use_analyzer) {
+            config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin).end();
+            config.plugins.delete('prefetch')
         }
     }
 }

@@ -1,1 +1,1 @@
-yarn build --report
+yarn build
